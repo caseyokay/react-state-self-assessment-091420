@@ -1,7 +1,21 @@
 import React from 'react';
+import Header from './Components/Header';
 import './App.css';
-function App() {
-  return <h1>You Can Do This!</h1>;
+import { render } from '@testing-library/react';
+import ClickImage from './Components/ClickImage';
+
+
+class App extends React.Component {
+
+
+  render(){
+  return (
+  <div>
+  <Header/>
+  <ClickImage />
+  </div>
+  )
+  }
 }
 
 export default App;
