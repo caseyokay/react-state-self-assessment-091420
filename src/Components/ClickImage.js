@@ -20,8 +20,8 @@ class ClickImage extends React.Component {
     YNPaths = {
         yImage: this.state.yes["yes-image"],
         yStatement: this.state.yes["yes-statement"],
-        nImage: this.state.yes["no-image"],
-        nStatement: this.state.yes["no-statement"]
+        nImage: this.state.no["no-image"],
+        nStatement: this.state.no["no-statement"]
     }
 
     getImageName = () => this.state.open ? 'yImage' : 'nImage'
@@ -31,8 +31,8 @@ class ClickImage extends React.Component {
     
       return (
         <div onClick= {this.clickHandler} className="card">
-          <img  alt="click" src= {this.YNPaths.yImage}/>
-          <h2> {this.YNPaths.yStatement} </h2>
+        {this.state.open ? (<img src= {this.YNPaths.nImage}/>): <img  alt="click" src= {this.YNPaths.yImage}/>}
+        {this.state.open ? (<h2> {this.YNPaths.nStatement} </h2>): <h2> {this.YNPaths.yStatement} </h2>}
         </div>
       );
     }
